@@ -1,3 +1,5 @@
+@use "screen-size" as *;
+
 .page_container {
     display: grid;
     gap: 20px;
@@ -25,6 +27,35 @@
         background-image: url("/src/assets/bg-main-mobile.png");
         background-size:cover;
     }
+
+    @include screen-size-up(tablet) {
+        &::before {
+            content: "";
+            position: absolute;
+            width: 133.33px;
+            height: 133.33px;
+            top: 300px;
+            left: 600px;
+            background-color: #FA7453;
+            border-radius: 78px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 156px;
+            height: 312px;
+            top: -20px;
+            left: 580px;
+            background-color: #66E2DC;
+            border-radius: 100px 100px 0px 100px;
+        }
+
+        .bg_image {
+            left: 320px;
+        }
+    }
+
 }
 
 .page_hero {
@@ -45,6 +76,22 @@
         font-style: normal;
         line-height: 26px;
         color: #191826;
+    }
+
+    @include screen-size-up(tablet) {
+        width: 520px;
+        
+        h1 {
+            font-size: 64px;
+            line-height: 64px;
+            letter-spacing: -0.73px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 28px;
+            margin-bottom: 80px;
+        }
     }
 }
 
@@ -149,7 +196,7 @@
             }
 
             &__month {
-                padding-top: 20px;
+                padding-top: 30px;
             }
         }
 
@@ -167,6 +214,61 @@
             color: #FCFAF9;
         }
     }
+
+    @include screen-size-up(tablet) {
+        height: 600px;
+        margin-left: 33px;
+        margin-right: 33px;
+
+        .bg_demo1 {
+            width: 140px;
+            height: 70px;
+            left: 260px;
+            top: 60px;
+            background-color: #FCFAF9;
+        }
+
+        .bg_demo2 {
+            height: 140px;
+            width: 140px;
+            left: 260px;
+            top: 140px;
+        }
+
+        .bg_demo3 {
+            display: none;
+        }
+
+        .bg_demo4 {
+            display: none;
+        }
+
+        .bg_demo5 {
+            width: 140px;
+            height: 210px;
+            left: 400px;
+            top: 60px;
+        }
+
+        .demo_illustrate {
+            width: 270.21px;
+            height: 556px;
+        }
+
+        .demo_action {
+            width: 399px;
+            left: 272px;
+            bottom: -120px;
+            z-index: 10;
+        }
+
+        .demo_price {
+            &__month {
+                padding-left: 20px;
+            }
+        }
+
+    }
 }
 
 .page_footer {
@@ -182,6 +284,33 @@
 
         img {
             margin-right: 8px;
+        }
+    }
+
+    @include screen-size-up(tablet) {
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 30% 70%;
+        grid-template-areas: "logo logo"
+                             "info apps";
+        margin-top: 80px;
+        margin-bottom: 80px;
+
+        .footer_logo {
+            grid-area: logo;
+        }
+
+        .footer_text {
+            grid-area: info;
+        }
+
+        .connect {
+            grid-area: apps;
+            justify-self: right;
+
+            img {
+                margin-right: 10px;
+            }
         }
     }
 }
