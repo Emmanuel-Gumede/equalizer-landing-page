@@ -1,0 +1,7 @@
+$screen-sizes-up: ("tablet": "640px", "desktop": "1024px");
+
+@mixin screen-size-up($size) {
+    @media (min-width: map-get($screen-sizes-up, $size)) {
+        @content;
+    }
+}
