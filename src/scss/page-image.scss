@@ -1,0 +1,271 @@
+@use "screen-size" as *;
+
+.page_image {
+    width: 23.4375rem;
+    height: 64rem;
+    margin-top: 2.5rem;
+
+    @include screen-size-up(tablet) {
+        width: 43.875rem;
+        height: 52.125rem;
+        // margin-left: 2.0625rem;
+        // margin-right: 2.0625rem;
+    }
+
+    @include screen-size-up(desktop) {
+        width: 90rem;
+        margin-left: 10.3125rem;
+        margin-right: 10.3125rem;
+        height: 58rem;
+        margin-top: 6.25rem;
+    }
+}
+
+.page_demo {
+    position: relative;
+    width: 23.4375rem;
+    height: 37.5rem;
+    background-color: #191826;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 0.625rem;
+    
+    .demo_illustrate {
+        position: absolute;
+        top: -6.25rem;
+        width: 13.125rem;
+        height: 26.875rem;
+        margin: 0 5rem;
+        z-index: 5;
+    }
+
+    .bg_demo1 {
+        position: absolute;
+        width: 4.375rem;
+        height: 8.75rem;
+        left: 3rem;
+        background-color: #66E2DC;
+        border-radius: 2.4375rem;
+        z-index: 2;
+
+    }
+
+    .bg_demo2 {
+        position: absolute;
+        width: 8.75rem;
+        height: 8.75rem;
+        left: 3rem;
+        top: 8.75rem;
+        background-color: #FFB964;
+        border-radius: 4.875rem;
+        z-index: 2;
+
+    }
+
+    .bg_demo3 {
+        position: absolute;
+        width: 8.75rem;
+        height: 8.75rem;
+        left: 3rem;
+        top: 17.5rem;
+        border: 0.125rem solid #FCFAF9;
+        border-radius: 4.875rem;
+        z-index: 2;
+
+    }
+
+    .bg_demo4 {
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        left: 5rem;
+        top: 21.25rem;
+        border: 0.125rem solid #FCFAF9;
+        border-radius: 4.875rem;
+        z-index: 2;
+
+    }
+
+    .bg_demo5 {
+        position: absolute;
+        width: 8.75rem;
+        height: 13.125rem;
+        left: 11.75rem;
+        top: 2.5rem;
+        background-color: #66E2DC;
+        border-radius: 6.25rem 6.25rem 0rem 6.25rem;
+        z-index: 2;
+
+    }
+
+    .demo_action {
+        position: absolute;
+        bottom: -22.25rem;
+        height: 34.125rem;
+        margin: 1.5rem 0;
+        background-color: #FA7453;
+        color: #FCFAF9;
+        border-radius: 0.625rem;
+        padding: 2.25rem;
+        z-index: 3;
+
+        h2 {
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 2.5rem;
+            color: #FCFAF9;
+        }
+
+        p {
+            font-family: inherit;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .demo_price {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+
+            &__money {
+                font-size: 4.0625rem;
+                font-weight: 700;
+            }
+
+            &__month {
+                padding-top: 1.875rem;
+            }
+        }
+
+        button {
+            width: 100%;
+            height: 3.8125rem;
+            font-size: 1.125rem;
+            cursor: pointer;
+            margin: 0.625rem 0;
+            border: none;
+            border-radius: 0.625rem;
+        }
+
+        #ios-btn {
+            background-color: #191826;
+            color: #FCFAF9;
+            transition: 0.3s ease;
+
+            &:hover {
+                background-color: #66E2DC;
+                color: #FCFAF9;
+            }
+        }
+
+        #android-btn {
+            background-color: #FCFAF9;
+            color: #191826;
+            transition: 0.3s ease;
+
+            &:hover {
+                background-color: #FFB964;
+                color: #191826;
+            }
+        }
+    }
+
+    @include screen-size-up(tablet) {
+        height: 37.5rem;
+        width: 43.875rem;
+        margin-left: 2.0625rem;
+
+        .bg_demo1 {
+            width: 8.75rem;
+            height: 4.375rem;
+            left: 16.25rem;
+            top: 3.75rem;
+            background-color: #FCFAF9;
+        }
+
+        .bg_demo2 {
+            height: 8.75rem;
+            width: 8.75rem;
+            left: 16.25rem;
+            top: 8.75rem;
+        }
+
+        .bg_demo3 {
+            display: none;
+        }
+
+        .bg_demo4 {
+            display: none;
+        }
+
+        .bg_demo5 {
+            width: 8.75rem;
+            height: 13.125rem;
+            left: 25rem;
+            top: 3.75rem;
+        }
+
+        .demo_illustrate {
+            width: 16.888125rem;
+            height: 34.75rem;
+            top: -10.25rem;
+        }
+
+        .demo_action {
+            width: 24.9375rem;
+            left: 17rem;
+            bottom: -10.25rem;
+            z-index: 10;
+        }
+
+        .demo_price {
+            &__month {
+                padding-left: 1.25rem;
+            }
+        }
+
+    }
+
+    @include screen-size-up(desktop) {
+        width: 69.375rem;
+        height: 37.5rem;
+
+        .demo_illustrate {
+            width: 19.5rem;
+            height: 40.125rem;
+            top: -13.25rem;
+        }
+
+        .demo_action {
+            width: 27.875rem;
+            height: 39.0625rem;
+            left: 35.5625rem;
+            bottom: -12rem;
+        }
+
+        .bg_demo1 {
+            width: 4.375rem;
+            left: 25.5rem;
+        }
+
+        .bg_demo2 {
+            left: 20.125rem;
+        }
+
+        .bg_demo3 {
+            display: block;
+            left: 20.125rem;
+        }
+
+        .bg_demo4 {
+            display: block;
+            left: 22.25rem;
+        }
+
+        .bg_demo5 {
+            left: 32.5rem;
+        }
+    }
+}
+

@@ -1,5 +1,126 @@
 @use "page-reset";
 @use "color-vars";
-@use "screen-size";
+@use "screen-size" as *;
 @use "typography";
-@use "components";
+@use "page-header";
+@use "page-footer";
+@use "page-image";
+@use "page-text";
+
+.page_container {
+    display: grid;
+    gap: 1.25rem;
+    grid-auto-rows: minmax(min-content, max-content);
+    width: 23.4375rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    @include screen-size-up(tablet) {
+        width: 48rem;
+    }
+
+    @include screen-size-up(desktop) {
+        width: 90rem;
+    }
+}
+
+.corner_image {
+    display: none;
+
+    @include screen-size-up(tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "img1 img2"
+        "img1 img3"
+        "img4 img5";
+        position: absolute;
+        width: 16.666875rem;
+        height: 25rem;
+        top: -2.5rem;
+        right: -2.5rem;
+
+        .image-1 {
+            grid-area: img1;
+            width: 8.333125rem;
+            height: 16.666875rem;
+            background-color: #66E2DC;
+            border-radius: 6.25rem 6.25rem 0 6.25rem;
+        }
+
+        .image-2 {
+            grid-area: img2;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: 
+            "img2a img2b"
+            "img2a img2c";
+
+            .image-2a {
+                grid-area: img2a;
+                background-color: #191826;
+                width: 4.166875rem;
+                height: 8.333125rem;
+                border-radius: 2.4375rem;
+            }
+
+            .image-2b {
+                grid-area: img2b;
+                width: 4.166875rem;
+                height: 4.166875rem;
+                background-color: #FA7453;
+                border-radius: 2.4375rem;
+            }
+
+            .image-2c {
+                grid-area: img2c;
+                width: 4.166875rem;
+                height: 4.166875rem;
+                background-color: #FFB964;
+                border-radius: 2.4375rem;
+            }
+        }
+
+        .image-3 {
+            grid-area: img3;
+            width: 8.333125rem;
+            height: 8.333125rem;
+            border: 0.125rem solid #191826;
+            border-radius: 4.875rem;
+
+            .image-3a {
+                width: 4.166875rem;
+                height: 4.166875rem;
+                margin-top: 2rem;
+                border: 0.125rem solid #191826;
+                border-radius: 4.875rem;
+            }
+            
+        }
+
+        .image-4 {
+            grid-area: img4;
+            width: 8.333125rem;
+            height: 8.333125rem;
+            background-color: #FA7453;
+            border-radius: 4.875rem;
+        }
+
+        .image-5 {
+            grid-area: img5;
+            width: 8.333125rem;
+            height: 8.333125rem;
+            background-color: #191826;
+            border-radius: 0 6.25rem 6.25rem 6.25rem;
+        }
+    }
+
+    @include screen-size-up(desktop) {
+        top: -2.5rem;
+        right: -2.5rem;
+    }
+
+}

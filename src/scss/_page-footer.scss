@@ -1,0 +1,82 @@
+@use "screen-size" as *;
+
+.page_footer {
+    width: 20.4375rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    .footer_text {
+        width: 100%;
+    }
+
+    span {
+        font-weight: 700;
+    }
+
+
+    .connect{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        img {
+            margin-right: 0.5rem;
+        }
+    }
+
+    @include screen-size-up(tablet) {
+        width: 41.625rem;
+        display: grid;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 30% 70%;
+        grid-template-areas: "logo logo"
+                             "info apps";
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+
+        .footer_logo {
+            grid-area: logo;
+        }
+
+        .footer_text {
+            grid-area: info;
+        }
+
+        .connect {
+            grid-area: apps;
+            justify-self: right;
+
+            img {
+                margin-right: 0.625rem;
+            }
+        }
+    }
+
+    @include screen-size-up(desktop) {
+        width: 70.6875rem;
+        display: grid;
+        grid-template-columns: 33% 34% 33%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "logo info conn";
+        margin-left: 10.3125rem;
+        margin-right: 10.3125rem;
+        margin-top: 1.25rem;
+        margin-bottom: 6.25rem;
+
+        .footer_logo {
+            grid-area: logo;
+            padding-top: 1.25rem;
+        }
+
+        .footer_text {
+            grid-area: info;
+        }
+
+        .connect {
+            grid-area: conn;
+            margin-top: 1.25rem;
+        }
+    }
+}
+
+
+
