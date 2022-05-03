@@ -16,5 +16,4 @@
 .prettierignore
 starter-code/
 node_modules/
-dist/
 .parcel-cache
