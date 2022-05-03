@@ -1,5 +1,5 @@
 @use "page-reset";
-@use "color-vars";
+@use "color-vars" as *;
 @use "screen-size" as *;
 @use "typography";
 @use "page-header";
@@ -46,7 +46,7 @@
             grid-area: img1;
             width: 8.333125rem;
             height: 16.666875rem;
-            background-color: #66E2DC;
+            background-color: $green;
             border-radius: 6.25rem 6.25rem 0 6.25rem;
         }
 
@@ -61,7 +61,7 @@
 
             .image-2a {
                 grid-area: img2a;
-                background-color: #191826;
+                background-color: $black;
                 width: 4.166875rem;
                 height: 8.333125rem;
                 border-radius: 2.4375rem;
@@ -71,7 +71,7 @@
                 grid-area: img2b;
                 width: 4.166875rem;
                 height: 4.166875rem;
-                background-color: #FA7453;
+                background-color: $red;
                 border-radius: 2.4375rem;
             }
 
@@ -79,7 +79,7 @@
                 grid-area: img2c;
                 width: 4.166875rem;
                 height: 4.166875rem;
-                background-color: #FFB964;
+                background-color: $orange;
                 border-radius: 2.4375rem;
             }
         }
@@ -88,14 +88,14 @@
             grid-area: img3;
             width: 8.333125rem;
             height: 8.333125rem;
-            border: 0.125rem solid #191826;
+            border: 0.125rem solid $black;
             border-radius: 4.875rem;
 
             .image-3a {
                 width: 4.166875rem;
                 height: 4.166875rem;
                 margin-top: 2rem;
-                border: 0.125rem solid #191826;
+                border: 0.125rem solid $black;
                 border-radius: 4.875rem;
             }
             
@@ -105,7 +105,7 @@
             grid-area: img4;
             width: 8.333125rem;
             height: 8.333125rem;
-            background-color: #FA7453;
+            background-color: $red;
             border-radius: 4.875rem;
         }
 
@@ -113,7 +113,7 @@
             grid-area: img5;
             width: 8.333125rem;
             height: 8.333125rem;
-            background-color: #191826;
+            background-color: $black;
             border-radius: 0 6.25rem 6.25rem 6.25rem;
         }
     }

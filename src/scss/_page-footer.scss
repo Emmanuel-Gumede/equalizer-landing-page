@@ -1,4 +1,5 @@
 @use "screen-size" as *;
+@use "color-vars" as *;
 
 .page_footer {
     width: 20.4375rem;
@@ -20,6 +21,11 @@
 
         img {
             margin-right: 0.5rem;
+            cursor: pointer;
+
+            &:hover {
+                filter: invert(67%) sepia(38%) saturate(4780%) hue-rotate(326deg) brightness(100%) contrast(97%);
+            }
         }
     }
 
